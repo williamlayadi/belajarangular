@@ -1,4 +1,46 @@
 <hello name="{{ name }}"></hello>
 <p>
-  Start editing to see some magic happen :)
+  Start editing to see some magic happen :) dhfhshdhfsdf 10 + 20 = {{10+20}}
+  <!-- stringg tambah string -->
+  <input type="text" [(ngModel)]="a" /> +
+  <input type="text" [(ngModel)]="b" />
+  = {{a+b}}
+  <!-- int tambah int -->
+  <input type="text" [(ngModel)]="a" /> +
+  <input type="text" [(ngModel)]="b" />
+  = {{ (a*1) + b*1 }}
+  <!-- class item -->
+  {{item.nama}} = {{item.harga | currency : 'Rp.' }} / {{item.satuan}}
+
+  <!-- {{hasil}} -->
 </p>
+
+<!-- class itemArray dengan looping for -->
+<div *ngFor="let fruit of itemArray">
+  {{fruit.nama}} = {{fruit.harga | currency : 'Rp.' }} / {{fruit.satuan}}
+</div>
+<!-- pakek index i -->
+<div *ngFor="let fruit of itemArray ; let i =index ">
+  {{i}}. {{fruit.nama}} = {{fruit.harga | currency : 'Rp.' }} / {{fruit.satuan}}
+</div>
+<!-- if biasa -->
+<p *ngIf="tampil">bisa tampil</p>
+
+<!-- template if -->
+<div *ngIf="tampil; then templatetrue; else templatefalse"></div>
+
+<ng-template #templatetrue>
+  <p>Template true</p>
+</ng-template>
+
+<ng-template #templatefalse>
+  <p>Template false</p>
+</ng-template>
+
+<!-- button -->
+<button (click)="OPEN()">button1</button> {{tulisanOPEN}}
+
+<!--  -->
+<input (keyup)="onKey($event)"/> <p>{{values}}
+
+
